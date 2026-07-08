@@ -37,5 +37,35 @@ robotraconteur = [
     "robotraconteur-abstract-robot"
 ]
 
+[tool.setuptools]
+packages = [
+	"abb_motion_program_exec",
+	"abb_motion_program_exec.commands",
+	"abb_motion_program_exec.robotraconteur",
+	"abb_motion_program_exec.robot",
+	"abb_motion_program_exec.robot.config_params",
+	"abb_motion_program_exec.robot.config_params_egm",
+	"abb_motion_program_exec.robot.config_params_multimove",
+	"abb_motion_program_exec.robot.HOME",
+	"abb_motion_program_exec.robot.autosetup",
+	]
+
+[tool.setuptools.package-dir]
+"abb_motion_program_exec" = "src/abb_motion_program_exec"
+"abb_motion_program_exec.commands" = "src/abb_motion_program_exec/commands"
+"abb_motion_program_exec.robot" = "robot"
+"abb_motion_program_exec.robotraconteur" = "src/abb_motion_program_exec/robotraconteur"
+"abb_motion_program_exec.robot.config_params" = "robot/config_params"
+"abb_motion_program_exec.robot.config_params_egm" = "robot/config_params_egm"
+"abb_motion_program_exec.robot.config_params_multimove" = "robot/config_params_multimove"
+"abb_motion_program_exec.robot.HOME" = "robot/HOME"
+"abb_motion_program_exec.robot.autosetup" = "robot/autosetup"
+
+
 [tool.setuptools.package-data]
 "abb_motion_program_exec.robotraconteur" = ["*.robdef"]
+"abb_motion_program_exec.robot.config_params" = ["*.*"]
+"abb_motion_program_exec.robot.config_params_egm" = ["*.*"]
+"abb_motion_program_exec.robot.config_params_multimove" = ["*.*"]
+"abb_motion_program_exec.robot.HOME" = ["*.*"]
+"abb_motion_program_exec.robot.autosetup" = ["*.*"]
