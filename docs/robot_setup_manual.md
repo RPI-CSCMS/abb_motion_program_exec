@@ -4,7 +4,7 @@ ABB Motion Program Exec requires software to be installed on the robot. This sof
 installed manually by copying files to the robot controller and importing configuration files.
 This documents covers manually installing the software on a virtual controller in Robot Studio.
 
-## Step 1: Install RobotWare 6.14
+## 1: Install RobotWare 6.14
 
 **This section only needs to be completed once on RobotWare installation.**
 
@@ -47,15 +47,15 @@ other options often don't affect simulation.
 
 This step may be done one of two ways:
 
-1. By using the `abb_motion_program_exec setup` command ([Automatically Configure Project](#automatically-configure-project)), or
+1. By using the `abb_motion_program_exec.robotstudio_setup` submodule ([Automatically Configure Project](#automatically-configure-project)), or
 2. Manually through configuration dialogs ([Manually Configure Project](#manually-configure-project)) 
 
 ### Automatically Configure Project
 
-With the `abb_motion_program_exec` library installed, a setup script is exposed to make configuration of projects easier, specifically accessed through the `setup` command:
+With the `abb_motion_program_exec` library installed, the `abb-motion-program-exec-robotstudio-setup.exe` script is available to make configuration of projects easier, specifically accessed through CLI command:
 
 ```none
-python -m abb_motion_program_exec setup  [-h] [-e] [-d directory] [-i] project
+abb-motion-program-exec-robotstudio-setup  [-h] [-e] [-d directory] [-i] project
 
 positional arguments:   
         project              Name of project to configure  
@@ -66,7 +66,7 @@ options:
         -d, --dir directory  Directory of project if not in default location
         -i, --inplace        Use this option if script is run within project directory. 
                                 If used, the project name and argument -d are ignored;
-                                however, a dummy project name is still required
+                                however, a dummy project name is still required.
 ```
 
 This command will perform all steps necessary to configure a newly project for basic operation or using externally guided motion (using the `-e` flag). This command **should not be used** on projects that have been significantly modified past the instructions above as changes may be overwritten.
@@ -76,13 +76,13 @@ Before running this command, ensure that the target project is closed within Rob
 If a project, named for example `projectEx`, was created in the default RobotStudio projects directory then the project may be configured using:
 
 ```
-python -m abb_motion_program_exec setup projectEx
+abb-motion-program-exec-robotstudio-setup projectEx
 ```
 
 or with
 
 ```
-python -m abb_motion_program_exec setup -e projectEx
+abb-motion-program-exec-robotstudio-setup --egm projectEx
 ```
 
 for using externally guided motion.
